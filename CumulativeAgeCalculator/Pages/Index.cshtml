@@ -1,0 +1,52 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Age Calculator";
+}
+<h1 class="mb-5">Cumulative Age Calculator</h1>
+<br/>
+<div class="mt-5">
+    <form method="post">
+        <div class="form-group">
+            <label for="FirstPersonDob">Parent Date Of Birth</label>
+            <input required type="date" class="form-control" asp-for="FirstPersonDob" placeholder="Parent Date of Birth" />
+        </div>
+        <div class="form-group">
+            <label for="Child1Dob">First Child Date of Birth</label>
+            <input required type="date" class="form-control" asp-for="Child1Dob" placeholder="First Child Date of Birth" />
+        </div>
+        <div class="form-group">
+            <label for="Child2Dob">Second Child Date of Birth</label>
+            <input required type="date" class="form-control" asp-for="Child2Dob" placeholder="Second Child Date of Birth" />
+        </div>
+        <div class="form-group">
+            <label for="Child3Dob">Third Child Date of Birth</label>
+            <input required type="date" class="form-control" asp-for="Child3Dob" placeholder="Third Child Date of Birth" />
+        </div>
+        <div class="form-group">
+            <label for="Child4Dob">Fourth Child Date of Birth</label>
+            <input required type="date" class="form-control" asp-for="Child4Dob" placeholder="Fourth Child Date of Birth" />
+        </div>
+        <div class="form-group">
+            <label for="Child5Dob">Fifth Child Date of Birth</label>
+            <input required type="date" class="form-control" asp-for="Child5Dob" placeholder="Fifth Child Date of Birth" />
+        </div>
+        <button type="submit" class="btn btn-primary">Calculate</button>
+    </form>
+</div>
+@if (Model.ShowAge)
+{
+<div class="card">
+    <div class="card card-body">
+        <h3 class="card-title">Age of parent when all child ages add up to his/hers</h3>
+        <dl>
+            <dt>Age in years</dt>
+            <dd>@($"{Model.AgeInYears:0.00}")</dd>
+        </dl>
+        <dl>
+            <dt>Age in days</dt>
+            <dd>@($"{Model.AgeInDays:0.00}")</dd>
+        </dl>
+    </div>
+</div>
+}
